@@ -1,11 +1,33 @@
-a::before {
+body {
+    background-image: url('../assets/rainbow-background.jpg');
+    background-size: cover;
+}
+
+#return {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(133, 13, 55, 0.6);
+    display: flex;
+}
+
+#return > a::before {
     content: '<';
     padding: 10px;
 }
 
-a {
-    text-decoration: none;
-    margin-left: 20px;
+#return > a {
+    color:antiquewhite;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#return > a:hover {
+    text-decoration: underline;
+}
+
+#return a {
+    margin-left: 30px;
     position: relative;
     top: 20px;
 }
@@ -14,12 +36,37 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: 50px;
 }
 
 #display {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 460px;
+    margin: 0 auto;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+    padding: 30px;
+    background-color: antiquewhite;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#display a {
+    color: black;
+}
+
+#display h2 {
+    margin-top: 0px;
 }
 
 #display h3 {
@@ -33,11 +80,16 @@ a {
 }
 
 .image-container img {
-    width: 50%;
+    width: 100%;
+}
+
+#display a {
+    margin: 0 auto;
 }
 
 h2 {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 th {
@@ -58,5 +110,11 @@ td {
 table {
     margin-bottom: 100px;
     border-spacing: 20px 3px;
-    margin-top: 30px;
+    margin-top: 80px;
+    background: antiquewhite;
+    padding: 10px 0px;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
 }
+

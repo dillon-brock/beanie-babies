@@ -4,10 +4,12 @@ export default function createBeanieBabyDetail(root) {
     const nameDisplay = root.querySelector('h2');
     const tbody = root.querySelector('tbody');
     const displaySection = root.querySelector('#display');
+    const a = root.querySelector('a');
 
     return ({ beanieBaby }) => {
 
         image.src = beanieBaby.image;
+        a.href = beanieBaby.link;
 
         if (beanieBaby.title.includes('(')) {
             const splitName = beanieBaby.title.split('(');
@@ -53,8 +55,7 @@ export default function createBeanieBabyDetail(root) {
 
 function tableRow(k, v) {
     if (/[A-Z]/.test(k)) {
-        const words = k.split(/(?=[A-Z])/).join(' ');
-        k = words.toLowerCase();
+        k = k.split(/(?=[A-Z])/).join(' ').toLowerCase();
     }
 
     const tr = document.createElement('tr');
