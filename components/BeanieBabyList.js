@@ -1,5 +1,11 @@
 export default function createBeanieBabies(root) {
 
+    return ({ beanieBabies }) => {
+        for (const beanieBaby of beanieBabies) {
+            root.append(beanieBabyCard({ beanieBaby }));
+        }
+    };
+
 }
 
 function beanieBabyCard({ beanieBaby }) {
@@ -27,4 +33,6 @@ function beanieBabyCard({ beanieBaby }) {
     a.append(imageContainer, textContainer);
 
     li.append(a);
+
+    return li;
 }

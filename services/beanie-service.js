@@ -3,7 +3,7 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsI
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getBeanieBaby(id) {
-    const response = client
+    const response = await client
         .from('beanie_babies')
         .select(`
                 id,
@@ -18,9 +18,9 @@ export async function getBeanieBaby(id) {
 }
 
 export async function getBeanieBabies() {
-    const response = client
+    const response = await client
         .from('beanie_babies')
         .select();
-    
+        
     return response.data;
 }
