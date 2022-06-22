@@ -1,1 +1,33 @@
 /* CSS for home page (index.html) */
+
+#bb-list {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.bb-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bb-card .image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.bb-card img {
+    width: 80%;
+    object-fit: contain;
+}
+
+.bb-card h2 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
