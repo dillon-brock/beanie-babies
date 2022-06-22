@@ -9,7 +9,8 @@ export async function getBeanieBaby(id) {
                 id,
                 image,
                 astroSign,
-                title
+                title,
+                birthday
                 `)
         .match({ id })
         .single();
@@ -21,6 +22,6 @@ export async function getBeanieBabies() {
     const response = await client
         .from('beanie_babies')
         .select();
-        
+
     return response.data;
 }
