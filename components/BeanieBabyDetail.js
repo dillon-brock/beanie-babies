@@ -8,7 +8,7 @@ export default function createBeanieBabyDetail(root) {
 
         image.src = beanieBaby.image;
         name.textContent = beanieBaby.title;
-        // name.style.backgroundColor = 'hsl(360, 50%, 40%)';
+        
         let numOfRows = 0;
         for (const v of Object.values(beanieBaby)) {
             if (v && v !== 'N/A' && v !== '-') {
@@ -23,18 +23,15 @@ export default function createBeanieBabyDetail(root) {
             }
         }
 
-        const thElements = tbody.querySelectorAll('th');
-        const tdElements = root.querySelectorAll('td');
-        thElements.forEach(th => {
+        const trElements = tbody.querySelectorAll('tr');
+        trElements.forEach(tr => {
+            const th = tr.querySelector('th');
+            const td = tr.querySelector('td');
             let h = rowNum * (360 / numOfRows);
-            th.style.backgroundColor = `hsl(${h}, 80%, 60%)`;
-            rowNum++;
-        });
 
-        rowNum = 0;
-        tdElements.forEach(td => {
-            let h = rowNum * (360 / numOfRows);
+            th.style.backgroundColor = `hsl(${h}, 80%, 60%)`;
             td.style.border = `5px solid hsl(${h}, 80%, 60%)`;
+
             rowNum++;
         });
     };
