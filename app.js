@@ -13,7 +13,6 @@ async function handlePageLoad() {
             colors.push(beanieBaby.color);
         }
     }
-    console.log(colors);
     display();
 }
 

@@ -9,7 +9,7 @@ export default function createBeanieBabyDetail(root) {
         image.src = beanieBaby.image;
         const article = beanieBaby.astroSign.charAt(0) === 'A' ? 'an' : 'a';
         name.textContent = beanieBaby.title;
-        p.textContent = `${beanieBaby.name} was born on ${beanieBaby.birthday} and is ${article} ${beanieBaby.astroSign}`;
+        p.textContent = `${beanieBaby.title} was born on ${beanieBaby.birthday} and is ${article} ${beanieBaby.astroSign}.`;
 
     };
 }
