@@ -1,23 +1,37 @@
 export default function createBeanieBabyDetail(root) {
 
     const image = root.querySelector('img');
-    const name = root.querySelector('h2');
+    const nameDisplay = root.querySelector('h2');
     const tbody = root.querySelector('tbody');
+    const displaySection = root.querySelector('#display');
 
     return ({ beanieBaby }) => {
 
         image.src = beanieBaby.image;
-        name.textContent = beanieBaby.title;
+
+        if (beanieBaby.title.includes('(')) {
+            const splitName = beanieBaby.title.split('(');
+            const name = splitName[0].slice(0, -1);
+            const size = splitName[1].slice(0, -1);
+
+            nameDisplay.textContent = name;
+            const sizeDisplay = document.createElement('h3');
+            sizeDisplay.textContent = size;
+            displaySection.append(sizeDisplay);
+        }
+        else {
+            nameDisplay.textContent = beanieBaby.title;
+        }
 
         let numOfRows = 0;
         for (const v of Object.values(beanieBaby)) {
-            if (v && v !== 'N/A' && v !== '-') {
+            if (v) {
                 numOfRows++;
             }
         }
         let rowNum = 0;
         for (const [k, v] of Object.entries(beanieBaby)) {
-            if (v && v !== 'N/A' && v !== '-') {
+            if (v) {
                 const tr = tableRow(k, v);
                 tbody.append(tr);
             }

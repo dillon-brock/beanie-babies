@@ -16,10 +16,24 @@ a {
     align-items: center;
 }
 
+#display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#display h3 {
+    margin-top: 30px;
+}
+
 .image-container {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.image-container img {
+    width: 50%;
 }
 
 h2 {
@@ -29,6 +43,8 @@ h2 {
 th {
     padding: 1.5rem 0px;
     border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 td {
