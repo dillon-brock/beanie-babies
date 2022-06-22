@@ -26,7 +26,7 @@
     object-fit: contain;
 }
 
-.bb-card h2 {
+.bb-card span {
     font-size: 1.75rem;
     text-align: center;
 }

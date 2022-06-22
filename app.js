@@ -1,10 +1,14 @@
 // import services and utilities
-
+import { getBeanieBabies } from './services/beanie-service.js';
 // import component creators
 
 // declare state variables
-
+let beanieBabies = [];
 // write handler functions
+async function handlePageLoad() {
+    beanieBabies = await getBeanieBabies();
+    display();
+}
 
 // Create each component: 
 // - pass in the root element via querySelector
@@ -16,4 +20,4 @@ function display() {
 }
 
 // Call display on page load
-display();
+handlePageLoad();
