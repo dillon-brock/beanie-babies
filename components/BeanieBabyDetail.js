@@ -18,7 +18,7 @@ export default function createBeanieBabyDetail(root) {
 
             nameDisplay.textContent = name;
             const sizeDisplay = document.createElement('h3');
-            sizeDisplay.textContent = size;
+            sizeDisplay.textContent = `Size: ${size}`;
             displaySection.append(sizeDisplay);
         }
         else {
