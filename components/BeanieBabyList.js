@@ -27,7 +27,7 @@ function beanieBabyCard({ beanieBaby }) {
     const h2 = document.createElement('h2');
     h2.textContent = beanieBaby.title;
     const span = document.createElement('span');
-    span.textContent = beanieBaby.astroSign;
+    span.textContent = `[Astrological Sign: ${beanieBaby.astroSign}]`;
     textContainer.append(h2, span);
 
     a.append(imageContainer, textContainer);

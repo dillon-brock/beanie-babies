@@ -1,16 +1,31 @@
 /* CSS for home page (index.html) */
+body {
+    background-color: pink;
+}
+
+main h1 {
+    margin-left: 30px;
+}
 
 #bb-list {
     display: grid;
-    row-gap: 10px;
-    column-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    margin: 20px 30px;
+    text-decoration: none;
 }
 
 .bb-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+    background-image: linear-gradient(white, rgb(255, 223, 229));
+    padding: 10px 0px 16px 0px;
+    text-align: center;
 }
 
 .bb-card .image-container {
@@ -23,11 +38,26 @@
 
 .bb-card img {
     width: 80%;
-    object-fit: contain;
+}
+
+.bb-card h2 {
+    color: black;
 }
 
 .bb-card span {
-    font-size: 1.75rem;
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
+span {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+a:visited {
+    
+}
