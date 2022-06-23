@@ -3,10 +3,6 @@ body {
     background-color: pink;
 }
 
-main h1 {
-    margin-left: 30px;
-}
-
 #bb-list {
     display: grid;
     row-gap: 1.5rem;
@@ -56,4 +52,36 @@ span {
     color: gray;
     text-transform: uppercase;
     font-size: 0.8rem;
+}
+
+#top {
+    margin-left: 40px;
+}
+
+#top form {
+    display: flex;
+    gap: 20px;
+    /* width: 200px; */
+    justify-items: center;
+}
+
+label {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    gap: 5px;
+}
+
+select, input {
+    width: 200px;
+    padding: 8px;
+
+}
+
+form button {
+    width: 100px;
+    height: 40px;
+    align-self: flex-end;
+    background: rgb(188, 32, 58);
+    color: white;
 }
