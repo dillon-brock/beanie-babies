@@ -15,7 +15,10 @@ export async function getBeanieBaby(id) {
 export async function getBeanieBabies() {
     const response = await client
         .from('beanie_babies')
-        .select();
+        .select(`id,
+                title,
+                image,
+                astroSign`);
 
     return response.data;
 }
