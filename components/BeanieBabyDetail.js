@@ -10,6 +10,7 @@ export default function createBeanieBabyDetail(root) {
 
         image.src = beanieBaby.image;
         a.href = beanieBaby.link;
+        a.setAttribute('target', '_blank');
 
         if (beanieBaby.title.includes('(')) {
             const splitName = beanieBaby.title.split('(');
