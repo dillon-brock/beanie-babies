@@ -12,13 +12,23 @@ export async function getBeanieBaby(id) {
     return response.data;
 }
 
-export async function getBeanieBabies() {
-    const response = await client
+export async function getBeanieBabies(title, astroSign, { start, end }) {
+
+    let query = client
         .from('beanie_babies')
         .select(`id,
                 title,
                 image,
-                astroSign`);
+                astroSign`, { count: 'exact' });
+    
+    if (title) {
+        query = query.ilike('title', `%${title}%`);
+    }
+    if (astroSign) {
+        query = query.ilike('astroSign', astroSign);
+    }
+    query = query.range(start, end);
 
-    return response.data;
+    const response = await query;
+    return response;
 }

@@ -24,7 +24,48 @@
     </header>
 
     <main>
-        <h1>Choose A Beanie Baby!</h1>
+        <section id="top">
+            <h1>Find A Beanie Baby!</h1>
+            <form id="filter">
+                <label>
+                    Name
+                    <input name="title" placeholder="name">
+                </label>
+                <label>
+                    Astrological Sign
+                    <select name="astro-sign">
+                        <option selected value="">All Signs</option>
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Virgo">Virgo</option>
+                        <option value="Libra">Libra</option>
+                        <option value="Scorpio">Scorpio</option>
+                        <option value="Sagittarius">Sagittarius</option>
+                        <option value="Capricorn">Capricorn</option>
+                        <option value="Aquarius">Aquarius</option>
+                        <option value="Pisces">Pisces</option>
+                    </select>
+                </label>
+                <button>Search</button>
+            </form>
+            <div id="paging">
+                <label>
+                    Per Page:
+                    <select name="page-size">
+                        <option value="5">5</option>
+                        <option selected value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </label>
+                <button>prev page</button>
+                <span>page 1 of x</span>
+                <button>next page</button>
+            </div>
+        </section>
         <ul id="bb-list"></ul>
     </main>
 
