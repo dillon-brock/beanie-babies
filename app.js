@@ -19,7 +19,6 @@ async function handlePageLoad() {
 
     title = params.get('title') || '';
     astroSign = params.get('astroSign') || '';
-    if (astroSign === 'null') astroSign = '';
 
     page = Number(params.get('page')) || 1;
     pageSize = Number(params.get('pageSize')) || 10;
