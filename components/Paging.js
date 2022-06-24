@@ -21,6 +21,6 @@ export default function createPaging(root, { handlePaging }) {
         pageDisplay.textContent = `page ${page} of ${totalPages}`;
 
         next.disabled = page >= totalPages;
-        prev.disabled = page <= 0;
+        prev.disabled = page <= 1;
     };
 }
