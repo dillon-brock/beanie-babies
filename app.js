@@ -4,15 +4,28 @@ import { getBeanieBabies } from './services/beanie-service.js';
 import createBeanieBabies from './components/BeanieBabyList.js';
 // declare state variables
 let beanieBabies = [];
-let colors = [];
+
+let title = '';
+let astroSign = '';
+let page = 1;
+let pageSize = 10;
+let totalPages = 0;
 // write handler functions
 async function handlePageLoad() {
-    beanieBabies = await getBeanieBabies();
-    for (const beanieBaby of beanieBabies) {
-        if (!colors.includes(beanieBaby.color)) {
-            colors.push(beanieBaby.color);
-        }
-    }
+    const params = new URLSearchParams(window.location.search);
+
+    title = params.get('title') || '';
+    astroSign = params.get('astroSign') || '';
+    page = Number(params.get('page')) || 1;
+    pageSize = Number(params.get('pageSize')) || 10;
+
+    const start = (page - 1) * pageSize;
+    const end = (page * pageSize) - 1;
+    console.log(end);
+
+    const { data, count } = await getBeanieBabies(title, astroSign, { start, end });    
+    beanieBabies = data;
+    totalPages = Math.ceil(count / pageSize);
     display();
 }
 
