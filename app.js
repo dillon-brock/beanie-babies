@@ -12,7 +12,8 @@ let astroSign = '';
 let page = 1;
 let pageSize = 10;
 let totalPages = 0;
-// write handler functions
+
+// handler functions
 async function handlePageLoad() {
     const params = new URLSearchParams(window.location.search);
 
@@ -50,9 +51,7 @@ function handleFilter(filter) {
     window.location.search = params.toString();
 }
 
-// Create each component: 
-// - pass in the root element via querySelector
-// - pass any needed handler functions as properties of an actions object 
+
 const CreateBeanieBabies = createBeanieBabies(document.querySelector('#bb-list'));
 const Paging = createPaging(document.getElementById('paging'), { handlePaging });
 const Filter = createFilter(document.getElementById('filter'), { handleFilter });
@@ -64,5 +63,4 @@ function display() {
     Filter({ title, astroSign });
 }
 
-// Call display on page load
 handlePageLoad();
