@@ -2,6 +2,7 @@
 import { getBeanieBabies } from './services/beanie-service.js';
 // import component creators
 import createBeanieBabies from './components/BeanieBabyList.js';
+import createPaging from './components/Paging.js';
 // declare state variables
 let beanieBabies = [];
 
@@ -29,15 +30,25 @@ async function handlePageLoad() {
     display();
 }
 
+function handlePaging(change, size) {
+    const params = new URLSearchParams(window.location.search);
+
+    page = Number(size) === pageSize ? Math.max(1, page + change) : 1;
+    params.set('page', page);
+    params.set('pageSize', size);
+    window.location.search = params.toString();
+}
 
 // Create each component: 
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object 
 const CreateBeanieBabies = createBeanieBabies(document.querySelector('#bb-list'));
+const Paging = createPaging(document.getElementById('paging'), { handlePaging });
 // Roll-up display function that renders (calls with state) each component
 function display() {
     // Call each component passing in props that are the pieces of state this component needs
     CreateBeanieBabies({ beanieBabies });
+    Paging({ page, pageSize, totalPages });
 }
 
 // Call display on page load
