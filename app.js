@@ -18,6 +18,8 @@ async function handlePageLoad() {
 
     title = params.get('title') || '';
     astroSign = params.get('astroSign') || '';
+    if (astroSign === 'null') astroSign = '';
+
     page = Number(params.get('page')) || 1;
     pageSize = Number(params.get('pageSize')) || 10;
 
@@ -43,7 +45,7 @@ function handleFilter(filter) {
     const params = new URLSearchParams(window.location.search);
 
     params.set('title', filter.title);
-    params.set('astroSign', filter.sign);
+    params.set('astroSign', filter.astroSign);
     params.set('page', 1);
     window.location.search = params.toString();
 }

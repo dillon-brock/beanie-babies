@@ -22,7 +22,7 @@ export async function getBeanieBabies(title, astroSign, { start, end }) {
                 astroSign`, { count: 'exact' });
     
     if (title) {
-        query = query.ilike('title', `%${title}`);
+        query = query.ilike('title', `%${title}%`);
     }
     if (astroSign) {
         query = query.ilike('astroSign', astroSign);

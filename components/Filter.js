@@ -8,12 +8,12 @@ export default function createFilter(form, { handleFilter }) {
         const formData = new FormData(form);
         handleFilter({
             title: formData.get('title'),
-            sign: formData.get('astro-sign')
+            astroSign: formData.get('astro-sign')
         });
     });
 
-    return ({ title, sign }) => {
+    return ({ title, astroSign }) => {
         input.value = title;
-        select.value = sign;
+        select.value = astroSign;
     };
 }
